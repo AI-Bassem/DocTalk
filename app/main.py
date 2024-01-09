@@ -186,7 +186,7 @@ def init_pinecone_index(index_name=PINECONE_INDEX_NAME):
         while not pinecone.describe_index(index_name).status["ready"]:
             time.sleep(1)
 
-    index = pinecone.GRPCIndex(index_name)
+    #index = pinecone.GRPCIndex(index_name)
 
     # print(index.describe_index_stats())
 
