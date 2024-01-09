@@ -66,7 +66,7 @@ The application can also be deployed as an AWS Lambda function. To do so, packag
 
 -   Docker installed
 
--   AWS SAM CLI installed
+-   AWS SAM CLI installed (see https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)
 
 #### *Using AWS SAM CLI and Docker:*
 
