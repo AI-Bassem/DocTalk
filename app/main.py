@@ -132,7 +132,7 @@ def add_pinecone_embeddings(data, index_name):
         # get metadata to store in Pinecone
         metadata = [{"text": x["text"][:4000]} for i, x in batch.iterrows()]
         # add to Pinecone
-        index = pinecone.GRPCIndex(index_name)
+        index = pinecone.Index(index_name)
         index.upsert(vectors=zip(ids, embeds, metadata))
 
     return index
@@ -186,7 +186,7 @@ def init_pinecone_index(index_name=PINECONE_INDEX_NAME):
         while not pinecone.describe_index(index_name).status["ready"]:
             time.sleep(1)
 
-    #index = pinecone.GRPCIndex(index_name)
+    #index = pinecone.Index(index_name)
 
     # print(index.describe_index_stats())
 
