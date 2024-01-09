@@ -55,6 +55,7 @@ Note: The first time you run the application, you will hit a couple of small iss
 
 ![](media/image3.png)
 
+* This code was tested on MacOS and Ubuntu
 
 ## As an AWS Lambda Function
 
