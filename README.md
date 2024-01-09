@@ -46,11 +46,15 @@ Running the Application
 
 To run the application via CLI, execute the main script:
 
-bashCopy code
 
 `python main.py`
 
 You will be prompted to enter the data source and your query. After providing the necessary inputs, the application will process the request and display the output.
+
+Note: The first time you run the application, you will hit a couple of small issues shown below. You need to run the command to install playwright separately, then run the application again. It will now take several minutes to populate the pinecone index the first time. Subsequent runs should be very fast.
+
+![](media/image3.png)
+
 
 ## As an AWS Lambda Function
 
