@@ -129,7 +129,7 @@ is a good idea to increase the Memory to 2048 MB
 #### *Create API Gateway*
 
 Follow the steps described in this article below or use the python
-script in api-gateway.py to create an API gateway for the lambda
+script at `api-gateway.py` to create an API gateway for the lambda
 function that allows clients to call it over HTTPS
 
 [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-api-as-simple-proxy-for-lambda.html#api-gateway-create-api-as-simple-proxy-for-lambda-build]{.underline}](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-api-as-simple-proxy-for-lambda.html#api-gateway-create-api-as-simple-proxy-for-lambda-build)
