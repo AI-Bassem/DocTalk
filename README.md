@@ -12,7 +12,7 @@ Features
 
 *   Load and process documents from specified URLs.
 *   Generate and use embeddings for text data.
-*   Leverage the OctoAI model for language understanding and processing.
+*   Leverage the OctoAI LLM endpoints for language understanding and processing.
 *   Compatible with AWS Lambda for serverless deployment.
 
 Prerequisites
@@ -82,7 +82,7 @@ your Lambda function.
 *Build the Container Image:* Use AWS SAM CLI to build your container
 image. The command would generally be:
 
-`sam build \--use-container`
+`sam build --use-container`
 
 Test Locally (Optional): Before deploying, you can test your Lambda
 function locally using SAM
@@ -98,9 +98,9 @@ Container Registry (ECR). You can do this using the Docker CLI.
 Then, use AWS SAM CLI to deploy your application. This involves
 packaging your application and deploying it using a SAM template:
 
-`sam package \--output-template-file packaged.yaml \--s3-bucket`
+`sam package --output-template-file packaged.yaml --s3-bucket`
 
-`sam deploy \--template-file packaged.yaml \--stack-name \--capabilities
+`sam deploy --template-file packaged.yaml --stack-name --capabilities
 CAPABILITY_IAM`
 
 
