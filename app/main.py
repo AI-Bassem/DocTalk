@@ -57,7 +57,7 @@ def process_documents(urls):
     transformed_docs = BeautifulSoupTransformer().transform_documents(
         docs, tags_to_extract=["div"]
     )
-    splitter = RecursiveCharacterTextSplitter(
+    splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
         chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP
     )
     splits = splitter.split_documents(transformed_docs)
