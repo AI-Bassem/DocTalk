@@ -5,12 +5,13 @@ import time
 import pinecone
 import pandas as pd
 from bs4 import BeautifulSoup
-from langchain.llms.octoai_endpoint import OctoAIEndpoint
+from langchain_community.llms.octoai_endpoint import OctoAIEndpoint
 from langchain.chains import ConversationalRetrievalChain
-from langchain.document_loaders import AsyncChromiumLoader
-from langchain.document_transformers import BeautifulSoupTransformer
-from langchain.embeddings import OctoAIEmbeddings
-from langchain.vectorstores import Pinecone
+from langchain.chains import retrieval_qa
+from langchain_community.document_loaders import AsyncChromiumLoader
+from langchain_community.document_transformers import BeautifulSoupTransformer
+from langchain_community.embeddings import OctoAIEmbeddings
+from langchain_community.vectorstores import Pinecone
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema.document import Document
 from dotenv import load_dotenv
@@ -41,7 +42,7 @@ if OCTOAI_TOKEN is None:
     raise ValueError("OCTOAI_TOKEN environment variable not set.")
 
 # Set cache directory for transformers
-os.environ["TRANSFORMERS_CACHE"] = TRANSFORMERS_CACHE_DIR
+os.environ["HF_HOME"] = TRANSFORMERS_CACHE_DIR
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 

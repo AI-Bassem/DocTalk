@@ -4,10 +4,10 @@ import boto3
 apigateway = boto3.client("apigateway")
 lambda_client = boto3.client("lambda")
 
-LAMBDA_ARN = "MyLambdaARN"
-API_NAME = "MyAPI"
+LAMBDA_ARN = "arn:aws:lambda:us-east-1:<account_id>:function:doctalk"
+API_NAME = "doctalkapi"
 STAGE_NAME = "prod"
-RESOURCE_PATH = "askllama"
+RESOURCE_PATH = "doctalkapi"
 HTTP_METHOD = "POST"
 
 # Create REST API

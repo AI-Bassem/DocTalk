@@ -244,3 +244,6 @@ $RECYCLE.BIN/
 
 app/.aws-sam
 app/run.py
+app/test_lc_llm.py
+app/testgateway.py
+api-gateway.py
