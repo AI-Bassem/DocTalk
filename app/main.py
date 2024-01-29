@@ -24,7 +24,7 @@ OCTOAI_JSON_FILE_PATH = "data/octoai_docs_urls.json"
 PINECONE_JSON_FILE_PATH = "data/pinecone_docs_urls.json"
 OCTOAI_DB_NAME = "pinecone_octoai_docs"
 PINECONE_DB_NAME = "pinecone_pinecone_docs"
-BATCH_SIZE = 100
+BATCH_SIZE = 1
 CHUNK_SIZE = 1300
 CHUNK_OVERLAP = 5
 PHRASE_LENGTH = 30
@@ -117,7 +117,7 @@ def get_embeddings(db_name=OCTOAI_DB_NAME):
 
 def add_pinecone_embeddings(data, index_name):
     embed = get_octo_embed_model()
-    batch_size = 100
+    batch_size = BATCH_SIZE
     for i in range(0, len(data), batch_size):
         i_end = min(len(data), i + batch_size)
         # get batch of data
