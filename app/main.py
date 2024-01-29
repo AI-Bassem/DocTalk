@@ -24,7 +24,6 @@ OCTOAI_JSON_FILE_PATH = "data/octoai_docs_urls.json"
 PINECONE_JSON_FILE_PATH = "data/pinecone_docs_urls.json"
 OCTOAI_DB_NAME = "pinecone_octoai_docs"
 PINECONE_DB_NAME = "pinecone_pinecone_docs"
-OCTOAI_EMBED_ENDPOINT_URL = "https://instructor-large-f1kzsig6xes9.octoai.run/predict"
 BATCH_SIZE = 100
 CHUNK_SIZE = 1300
 CHUNK_OVERLAP = 5
@@ -106,8 +105,7 @@ def process_text_files(filepath="data/shakespeare.txt"):
 
 
 def get_octo_embed_model():
-    return OctoAIEmbeddings(
-        endpoint_url=OCTOAI_EMBED_ENDPOINT_URL,
+    return OctoAIEmbeddings(endpoint_url="https://text.octoai.run/v1/embeddings",
         octoai_api_token=OCTOAI_TOKEN,
     )
 
@@ -180,7 +178,7 @@ def init_pinecone_index(index_name=PINECONE_INDEX_NAME):
         pinecone.create_index(
             name=index_name,
             metric="dotproduct",
-            dimension=768,  # instructor-large dimension
+            dimension=1024,  # instructor-large dimension
         )
 
         # wait for index to be initialized
